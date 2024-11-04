@@ -1,0 +1,19 @@
+{
+  "wing" : {
+    "planform" : {
+      "type" : "tapered",
+      "type_options" : [["elliptic: (requires aspect_ratio)"],
+                      ["tapered: (requires aspect_ratio and taper_ratio)"]],
+      "aspect_ratio" : 10,
+      "taper_ratio" : 1.0
+    },
+    "airfoil_lift_slope" : 6.283185307179590,
+    "nodes_per_semispan" : 16
+  },
+  "condition" : {
+      "alpha_root[deg]" : 0
+  },
+  "view" : {
+      "planform" : true
+  }
+}

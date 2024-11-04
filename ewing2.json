@@ -1,0 +1,49 @@
+{
+    "wing" : {
+        "planform" : {
+          "type" : "tapered",
+          "type_options" : [["elliptic: (requires aspect_ratio)"],
+                            ["tapered: (requires aspect_ratio and taper_ratio)"],
+                            ["file: (requires filename)"]],
+          "aspect_ratio" : 20,
+          "taper_ratio" : 1.0,
+          "filename" : "corsair.txt"
+        },
+        "airfoil_lift_slope" : 6.283185307179590,
+        "nodes_per_semispan" : 100,
+        "washout" : {
+          "distribution" : "optimum",
+          "distribution_options" : [["none: no twist"],
+                                    ["linear: linear twist distribution"],
+                                    ["optimum: optimum twist distribution"]],
+          "amount[deg]" : "optimum",
+          "amount_options" : [["value: real number in degrees"],
+                                 ["optimum: requires CL_design"]],
+          "CL_design" : 0.2
+        },
+        "aileron" : {
+            "begin[z/b]" : 0.25,
+            "end[z/b]" : 0.46,
+            "begin[cf/c]" : 0.2,
+            "end[cf/c]" : 0.2,
+            "hinge_efficiency" : 0.85
+        }
+    },
+    "condition" : {
+        "alpha_root[deg]" : "CL",
+        "alpha_options" : [["value: real number in degrees"],
+                           ["CL: requires CL"]],
+        "CL" : 0.2,
+        "aileron_deflection[deg]" : 0,
+        "pbar" : 0,
+        "pbar_options" : [["value: real number nondimensional rolling rate"],
+                          ["steady: computes steady-state rolling rate"]]
+    },
+    "view" : {
+        "planform" : true,
+        "washout_distribution" : true,
+        "aileron_distribution" : false,
+        "CL_hat_distributions" : true,
+        "CL_tilde_distributions" : true
+    }
+}
